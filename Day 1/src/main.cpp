@@ -51,6 +51,7 @@ int main(){
 			temp += line + "\n";
 		}
 	}
+	lines.push_back(SplitByNLine(temp));
 	std::vector<int> totals;
 	for(std::vector<std::string> line : lines){
 		totals.push_back(GetTotal(line));
@@ -60,6 +61,12 @@ int main(){
 		std::cout << total << "\n";
 	}
 	std::cout<< "Largest = " << totals[totals.size() - 1] << "\n";
-
+	int i = totals.size() - 3;
+	int n = 0;
+	for(; i != totals.size(); ++i){
+		n += totals[i];
+		printf("Here\n");
+	}
+	std::cout << "Top 3 = " << n << "\n"; 
 	return 0;
 }
