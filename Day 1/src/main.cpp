@@ -36,6 +36,7 @@ int GetTotal(std::vector<std::string> strs){
 
 int main(){
 	std::vector<std::vector<std::string>> lines; 
+	std::vector<int> totals;
 	std::string temp = "";
 	std::ifstream infile("input.txt");
 	std::string line;
@@ -44,18 +45,14 @@ int main(){
 			break;
 		}
 		if(line == "" || line == "\t" || line == " "){
-			lines.push_back(SplitByNLine(temp));
+			totals.GetTotal(push_back(SplitByNLine(temp)));
 			temp = "";
 		}else
 		{
 			temp += line + "\n";
 		}
 	}
-	lines.push_back(SplitByNLine(temp));
-	std::vector<int> totals;
-	for(std::vector<std::string> line : lines){
-		totals.push_back(GetTotal(line));
-	}
+	totals.GetTotal(push_back(SplitByNLine(temp)));
 	std::sort(totals.begin(), totals.end());
 	for(int total : totals){
 		std::cout << total << "\n";
