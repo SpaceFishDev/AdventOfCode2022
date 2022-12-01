@@ -1,13 +1,13 @@
-exec = 1.exe
-src = $(wildcard src/*.c)
+exec = d1.exe
+src = $(wildcard src/*.cpp)
 
 objects = $(src: .c=.o)
-flags = 
+flags = -ggdb3
 
 $(exec): $(objects) $(src_cs)
-	gcc $(objects) $(flags) -o $(exec)
+	g++ $(objects) $(flags) -o $(exec)
 %.o: %.c src/include/%.h
-	gcc -c $(flags) $< -o $@
+	g++ -c $(flags) $< -o $@
 
 
 
